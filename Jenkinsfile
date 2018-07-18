@@ -1,4 +1,4 @@
-def notifySlack(String buildStatus = 'SUCCESS') {
+def notifySlack(String buildStatus = 'STARTED') {
     // Build status of null means success.
     buildStatus = buildStatus ?: 'SUCCESS'
     
@@ -17,5 +17,7 @@ node {
     } catch (e) {
         currentBuild.result = 'FAILURE'
         throw e
-    } 
+    } finally {
+        notifySlack(currentBuild.result)
+    }
 }
