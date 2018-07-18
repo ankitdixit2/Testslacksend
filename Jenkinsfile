@@ -2,21 +2,13 @@ def notifySlack(String buildStatus = 'STARTED') {
     // Build status of null means success.
     buildStatus = buildStatus ?: 'SUCCESS'
     
-    def msg = "${buildStatus}: `${env.JOB_NAME}` #${env.BUILD_NUMBER}:\n${env.BUILD_USER_ID}"
+    def msg = "${buildStatus}: AWS EC2 VMs are created"
 
     slackSend(message: msg)
 }
 
 node {
     
-     def userr
-        stage('Build image') {
-        /* This builds the actual image; synonymous to
-         * docker build on the command line */
-
-        userr = 'env.$BUILD_USER'
-        sh "echo $userr"
-    }
     try {
       
         notifySlack()
