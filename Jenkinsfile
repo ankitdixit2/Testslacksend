@@ -14,7 +14,7 @@ node {
         /* This builds the actual image; synonymous to
          * docker build on the command line */
 
-        userr = "$BUILD_USER_ID"
+        userr = 'env.$BUILD_USER_ID'
         sh "echo $userr"
     }
     try {
