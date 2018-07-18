@@ -6,7 +6,7 @@ def notifySlack(String buildStatus = 'STARTED') {
 
     if (buildStatus == 'STARTED') {
         color = '#D4DADF'
-    } else (buildStatus == 'SUCCESS') {
+    } else {
         color = '#BDFFC3'
     } 
 
