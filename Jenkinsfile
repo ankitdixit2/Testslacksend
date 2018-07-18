@@ -2,7 +2,7 @@ def notifySlack(String buildStatus = 'STARTED') {
     // Build status of null means success.
     buildStatus = buildStatus ?: 'SUCCESS'
     
-    def msg = "${buildStatus}: `${env.BUILD_USER_ID}`"
+    def msg = "${buildStatus}: `${env.JOB_NAME}` #${env.BUILD_NUMBER}:\n${env.BUILD_URL}"
 
     slackSend(message: msg)
 }
