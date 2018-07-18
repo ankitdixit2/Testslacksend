@@ -9,6 +9,7 @@ def notifySlack(String buildStatus = 'STARTED') {
 
 node {
     try {
+        echo "$BUILD_USER_ID"
         notifySlack()
 
         // Existing build steps.
