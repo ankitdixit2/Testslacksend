@@ -2,17 +2,9 @@ def notifySlack(String buildStatus = 'STARTED') {
     // Build status of null means success.
     buildStatus = buildStatus ?: 'SUCCESS'
 
-    def color
-
-    if (buildStatus == 'STARTED') {
-        color = '#D4DADF'
-    } else {
-        color = '#BDFFC3'
-    } 
-
     def msg = "Terraform job is completed"
 
-    slackSend(color: color, message: msg)
+    slackSend(message: msg)
 }
 
 node {
