@@ -3,7 +3,8 @@ def notifySlack(String buildStatus = 'STARTED') {
     buildStatus = buildStatus ?: 'SUCCESS'
 
     def msg = "Terraform job is completed"
-
+    def username = "$(BUILD_USER_ID)"
+    echo $(BUILD_USER_ID)
     slackSend(message: msg)
 }
 
