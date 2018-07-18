@@ -8,8 +8,17 @@ def notifySlack(String buildStatus = 'STARTED') {
 }
 
 node {
+    
+     def userr
+        stage('Build image') {
+        /* This builds the actual image; synonymous to
+         * docker build on the command line */
+
+        userr = "$BUILD_USER_ID"
+        sh "echo $userr"
+    }
     try {
-        sh "(echo "$BUILD_USER_ID")"
+      
         notifySlack()
 
         // Existing build steps.
