@@ -11,7 +11,7 @@ node {
     
     try {
       
-        notifySlack()
+        notifySlack(currentBuild.result)
 
         // Existing build steps.
     } catch (e) {
