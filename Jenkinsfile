@@ -1,5 +1,5 @@
 def notify(text) {  
-  slackSend (channel: "jenkinsbuilds", message: "Terraform testing", teamDomain: "eiaconsultingsandbox", token: "ckQriaqQoctcd7RiNdbjCu8U")  
+  slackSend (channel: jenkinsbuilds, message: "Terraform testing", teamDomain: "eiaconsultingsandbox", token: "ckQriaqQoctcd7RiNdbjCu8U")  
 }
 
 node {
